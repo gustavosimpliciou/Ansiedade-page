@@ -40,6 +40,7 @@ a {
     font-weight: bold;
     display: inline-block;
     transition: background-color 0.3s;
+    cursor: pointer;
 }
 .btn-cta:hover {
     background-color: #E65A00;
@@ -253,6 +254,36 @@ summary {
     border: none;
     margin-top: 20px;
 }
+/* Popup */
+#checkout-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 700px;
+    height: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    z-index: 1000;
+    overflow: hidden;
+}
+#checkout-popup iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+#checkout-popup .close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #FF6B00;
+    cursor: pointer;
+}
 /* Footer */
 footer {
     background-color: #003366;
@@ -284,11 +315,10 @@ footer {
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+n.callMethod.apply(n,arguments):n.queue.push(arguments)}; 
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1098364668702521');
 fbq('track', 'PageView');
@@ -315,7 +345,7 @@ src="https://www.facebook.com/tr?id=1098364668702521&ev=PageView&noscript=1"
     <img src="image/PORTADA3D.png" alt="Portada del libro Vivir con TDAH" class="product-image">
     <p id="timer" class="timer"></p>
     <p>Oferta Especial: $11.00 (más impuestos) – ¡Aprovecha antes de que termine!</p>
-    <a href="#comprar" class="btn-cta">Comprar Ahora</a>
+    <a href="#comprar" class="btn-cta" onclick="openCheckout()">Comprar Ahora</a>
 </header>
 
 <!-- Intro -->
@@ -464,79 +494,82 @@ src="https://www.facebook.com/tr?id=1098364668702521&ev=PageView&noscript=1"
     <div class="container">
         <h2>Preguntas Frecuentes</h2>
         <details>
-            <summary>¿Qué es TDAH?</summary>
-            <p>El Trastorno por Déficit de Atención e Hiperactividad es un trastorno neuroconductual que afecta la concentración, impulsividad y actividad.</p>
+            <summary>¿Cuánto tiempo tarda en llegar el libro?</summary>
+            <p>Es un producto digital, por lo que el acceso es inmediato tras la compra.</p>
         </details>
         <details>
-            <summary>¿El libro es para adultos o niños?</summary>
-            <p>Principalmente para adultos, pero incluye estrategias adaptables para todas las edades.</p>
+            <summary>¿Puedo compartir el libro?</summary>
+            <p>Este libro es de uso personal. Compartirlo viola los términos de uso.</p>
         </details>
         <details>
-            <summary>¿Incluye ejercicios prácticos?</summary>
-            <p>Sí, con rutinas diarias y técnicas basadas en evidencia científica.</p>
-        </details>
-        <details>
-            <summary>¿Cómo accedo al producto después de comprar?</summary>
-            <p>Recibirás un enlace de descarga inmediata via email de Hotmart.</p>
-        </details>
-        <details>
-            <summary>¿Hay soporte post-venta?</summary>
-            <p>Sí, acceso a actualizaciones y comunidad en línea.</p>
+            <summary>¿Qué métodos de pago se aceptan?</summary>
+            <p>Tarjetas de crédito, débito y PayPal vía Hotmart.</p>
         </details>
     </div>
 </section>
 
-<!-- Checkout -->
+<!-- Comprar Ahora -->
 <section class="checkout section" id="comprar">
     <div class="container">
-        <h2>¡Comienza Tu Transformación Hoy!</h2>
-        <p>$11.00 (+ impuestos)</p>
-        <p>Pago seguro via Hotmart. Únete a miles que han mejorado su vida con esta guía.</p>
-        <iframe class="checkout-iframe" src="https://pay.hotmart.com/E99198227K?hotfeature=51&_hi=eyJjaWQiOiIxNzU4MTYwMjYzMzQwNTA2NTk3NTk2NzYyMDE4MzAwIiwiYmlkIjoiMTc1ODE2MDI2MzM0MDUwNjU5NzU5Njc2MjAxODMwMCIsInNpZCI6IjZjYzBmMjgwYWYyYTQ2MDdiNzdiMzZhMDFhMzMyNTQ4In0=.1758283857501&bid=1758283859170" width="640" height="800" frameborder="0" scrolling="auto"></iframe>
+        <a class="btn-cta" onclick="openCheckout()">Comprar Ahora</a>
     </div>
 </section>
+
+<!-- Popup Checkout -->
+<div id="checkout-popup">
+    <span class="close-popup" onclick="closeCheckout()">&times;</span>
+    <iframe src="https://pay.hotmart.com/E99198227K?hotfeature=51&_hi=eyJjaWQiOiIxNzU4MTYwMjYzMzQwNTA2NTk3NTk2NzYyMDE4MzAwIiwiYmlkIjoiMTc1ODE2MDI2MzM0MDUwNjU5NzU5Njc2MjAxODMwMCIsInNpZCI6IjZjYzBmMjgwYWYyYTQ2MDdiNzdiMzZhMDFhMzMyNTQ4In0=.1758283857501&bid=1758283859170" frameborder="0"></iframe>
+</div>
 
 <!-- Footer -->
 <footer>
-    <p>&copy; 2024 Vivir con TDAH. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Vivir con TDAH - Todos los derechos reservados.</p>
     <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-whatsapp"></i>
     </div>
 </footer>
 
 <script>
-function startTimer() {
-    const endDate = new Date();
-    endDate.setHours(22, 0, 0, 0);
-    function updateTimer() {
-        const now = new Date();
-        const diff = endDate - now;
-        if (diff <= 0) {
-            document.getElementById('timer').textContent = "¡La oferta terminó!";
-            return;
+// Countdown Timer
+function startTimer(duration, display) {
+    let timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.textContent = minutes + ":" + seconds;
+        if (--timer < 0) {
+            timer = duration;
         }
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        document.getElementById('timer').textContent =
-            `FIN DEL DESCUENTO: ${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
-    }
-    updateTimer();
-    setInterval(updateTimer, 1000);
+    }, 1000);
 }
-startTimer();
+window.onload = function () {
+    let fiveMinutes = 60 * 58,
+        display = document.querySelector('#timer');
+    startTimer(fiveMinutes, display);
+};
 
+// Fade-in sections
 const sections = document.querySelectorAll('.section');
-const observer = new IntersectionObserver(entries => {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if(entry.isIntersecting){
             entry.target.classList.add('visible');
         }
     });
 }, { threshold: 0.1 });
 sections.forEach(section => observer.observe(section));
+
+// Popup Checkout
+function openCheckout() {
+    document.getElementById('checkout-popup').style.display = 'block';
+}
+function closeCheckout() {
+    document.getElementById('checkout-popup').style.display = 'none';
+}
 </script>
 
 </body>
