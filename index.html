@@ -1,179 +1,284 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Controla tu Ansiedad</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="image/cerebro.png">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f4f8;
-            color: #333;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .header {
-            background-color: #1e3a8a;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            position: relative;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        .timer {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 10px;
-            background-color: #2563eb;
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-        .product-image-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .product-image {
-            max-width: 510px; /* Aumentado em 70% (300px * 1.7 = 510px) */
-            animation: moveSideToSide 3s ease-in-out infinite;
-        }
-        @keyframes moveSideToSide {
-            0% { transform: translateX(-20px); }
-            50% { transform: translateX(20px); }
-            100% { transform: translateX(-20px); }
-        }
-        .intro {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: white;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            font-family: 'Lora', serif; /* Fonte estilizada para a introdução */
-        }
-        .intro h2 {
-            font-family: 'Lora', serif;
-            font-weight: 700;
-            color: #1e3a8a;
-        }
-        .intro p {
-            max-width: 800px;
-            margin: 20px auto;
-            font-size: 1.1em;
-            font-weight: 400;
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #000;
-            margin: 20px auto;
-            border-radius: 10px;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .points {
-            padding: 40px 20px;
-            background-color: #e1e7ff;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        .points h2 {
-            text-align: center;
-            color: #1e3a8a;
-        }
-        .points ul {
-            list-style: none;
-            padding: 0;
-            max-width: 600px;
-            margin: 20px auto;
-        }
-        .points ul li {
-            font-size: 1.2em;
-            margin: 10px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-        .points ul li:before {
-            content: "✔";
-            color: #2563eb;
-            position: absolute;
-            left: 0;
-        }
-        .checkout {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #e1e7ff;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        .checkout h2 {
-            color: #1e3a8a;
-        }
-        .checkout-iframe {
-            width: 100%;
-            height: 800px;
-            border: none;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        .testimonials {
-            padding: 40px 20px;
-            background-color: white;
-            border-radius: 10px;
-            margin: 20px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .testimonials h2 {
-            text-align: center;
-            color: #1e3a8a;
-        }
-        .testimonial {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #f0f4f8;
-            border-radius: 5px;
-            font-style: italic;
-        }
-        .stars {
-            color: #facc15;
-            margin-bottom: 10px;
-        }
-        .guarantee {
-            text-align: center;
-            padding: 40px 20px;
-            margin: 20px 0;
-        }
-        .guarantee img {
-            max-width: 150px;
-            margin-bottom: 20px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #1e3a8a;
-            color: white;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Guía práctica para vivir con TDAH por Pablo Joel Paniagua. Estrategias probadas para mejorar el foco y la productividad.">
+<meta name="keywords" content="TDAH, déficit de atención, hiperactividad, salud mental, guía práctica">
+<title>Vivir con TDAH</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="icon" type="image/png" href="image/cerebro.png">
+<style>
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    color: #003366;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #003366;
+}
+a {
+    color: #FF6B00;
+    text-decoration: none;
+}
+.btn-cta {
+    background-color: #FF6B00;
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+.btn-cta:hover {
+    background-color: #E65A00;
+}
+/* Header */
+.header {
+    background: linear-gradient(to bottom, #FF6B00 0%, #FFFFFF 100%);
+    color: #003366;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.nav {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+.nav a {
+    color: #003366;
+    font-weight: bold;
+}
+.hero-title {
+    font-size: 3em;
+    margin: 0;
+}
+.hero-subtitle {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+.product-image {
+    max-width: 400px;
+    animation: zoom 2s ease-in-out infinite alternate;
+}
+@keyframes zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+.timer {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #FF6B00;
+}
+/* Fade-in animation */
+.section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s, transform 0.6s;
+}
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Introducción */
+.intro {
+    background-color: #FFFFFF;
+    padding: 60px 0;
+    text-align: center;
+}
+.intro ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto;
+}
+.intro li {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+.intro i {
+    color: #FF6B00;
+    margin-right: 10px;
+}
+/* Autor */
+.author {
+    background-color: #F5F5F5;
+    padding: 60px 0;
+    text-align: center;
+}
+.author img {
+    max-width: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+/* Beneficios */
+.benefits {
+    background-color: #FFFFFF;
+    padding: 60px 0;
+}
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.benefit-card {
+    background-color: #F5F5F5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.benefit-card:hover {
+    transform: translateY(-10px);
+}
+.benefit-card i {
+    font-size: 2em;
+    color: #FF6B00;
+    margin-bottom: 10px;
+}
+/* Testimonios */
+.testimonials {
+    background-color: #FFFFFF;
+    padding: 60px 0;
+}
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.testimonial-card {
+    background-color: #F5F5F5;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #FF6B00;
+    text-align: center;
+}
+.testimonial-card img {
+    max-width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.stars {
+    color: #facc15;
+    margin-bottom: 10px;
+}
+/* Antes y Después */
+.before-after {
+    background-color: #F5F5F5;
+    padding: 60px 0;
+    text-align: center;
+}
+.ba-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+.ba-column {
+    padding: 20px;
+    border-radius: 10px;
+}
+.ba-before {
+    background-color: #FFDAB9;
+}
+.ba-after {
+    background-color: #90EE90;
+}
+.ba-arrow {
+    font-size: 2em;
+    color: #FF6B00;
+    align-self: center;
+}
+/* Garantía */
+.guarantee {
+    background-color: #FFE4D6;
+    padding: 60px 0;
+    text-align: center;
+}
+.guarantee img {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+/* FAQ */
+.faq {
+    background-color: #FFFFFF;
+    padding: 60px 0;
+}
+details {
+    margin: 10px 0;
+    border: 1px solid #F5F5F5;
+    border-radius: 5px;
+    padding: 10px;
+}
+summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+/* Checkout */
+.checkout {
+    background-color: #F5F5F5;
+    padding: 60px 0;
+    text-align: center;
+}
+.checkout-iframe {
+    width: 100%;
+    height: 800px;
+    border: none;
+    margin-top: 20px;
+}
+/* Footer */
+footer {
+    background-color: #003366;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 40px 0;
+}
+.social-icons i {
+    font-size: 1.5em;
+    margin: 0 10px;
+    color: #FFFFFF;
+}
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2em;
+    }
+    .ba-grid {
+        grid-template-columns: 1fr;
+    }
+    .ba-arrow {
+        transform: rotate(90deg);
+        margin: 20px 0;
+    }
+}
+</style>
 </head>
 <!-- Meta Pixel Code -->
 <script>
@@ -193,94 +298,246 @@ src="https://www.facebook.com/tr?id=1098364668702521&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 <body>
-    <div class="header">
-        <h1>Controla tu Ansiedad</h1>
-        <div class="timer" id="timer">FIN DEL DESCUENTO: 22:00:00</div>
-    </div>
 
+<!-- Header -->
+<header class="header">
+    <nav class="nav">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#garantia">Garantía</a></li>
+            <li><a href="#comprar">Comprar</a></li>
+        </ul>
+    </nav>
+    <h1 class="hero-title">Vivir con TDAH: Guía Práctica para una Vida Más Enfocada</h1>
+    <p class="hero-subtitle">Por Pablo Joel Paniagua – Transforma tu día a día con estrategias probadas</p>
+    <img src="image/PORTADA3D.png" alt="Portada del libro Vivir con TDAH" class="product-image">
+    <p id="timer" class="timer"></p>
+    <p>Oferta Especial: $11.00 (más impuestos) – ¡Aprovecha antes de que termine!</p>
+    <a href="#comprar" class="btn-cta">Comprar Ahora</a>
+</header>
+
+<!-- Intro -->
+<section class="intro section" id="inicio">
     <div class="container">
-        <div class="product-image-container">
-            <img src="image/PORTADA3D.png" alt="Producto" class="product-image">
-        </div>
+        <h2>Sobre el Problema</h2>
+        <p>Vivir con TDAH no es solo distraerse fácilmente; es lidiar con hiperactividad, impulsividad y desafíos en la concentración que afectan tu trabajo, relaciones y bienestar. No estás solo: millones enfrentan esto diariamente. ¿Y si pudieras tomar el control?</p>
+        <p>Según la OMS, el TDAH afecta aproximadamente al 5% de la población infantil y persiste en el 2.5% de los adultos. Más del 4% de la población mundial tiene TDAH.</p>
+        <ul>
+            <li><i class="fas fa-check-circle"></i>Distraerse fácilmente en tareas</li>
+            <li><i class="fas fa-check-circle"></i>Hiperactividad e inquietud constante</li>
+            <li><i class="fas fa-check-circle"></i>Impulsividad en decisiones</li>
+            <li><i class="fas fa-check-circle"></i>Problemas en relaciones interpersonales</li>
+        </ul>
+    </div>
+</section>
 
-        <div class="intro">
-            <h2>¿Sientes Ansiedad? ¡No Estás Solo!</h2>
-            <p>Sentir un poco de ansiedad de vez en cuando es algo normal en la vida, pero para quienes lidian con trastornos de ansiedad, las preocupaciones y los miedos se vuelven intensos, casi como una sombra que no te suelta, invadiendo cada rincón del día. A veces, hasta te enfrentas a esos momentos de pánico repentino que te golpean fuerte en minutos (ataques de pánico).</p>
-            <p>¿Y si hoy fuera el día en que decides romper ese ciclo?</p>
-            <p>Nadie sabe exactamente qué lo desata, pero la verdad es que el tiempo para hacer algo al respecto se siente cada vez más corto. ¿Sientes ese nudo en el pecho que no te deja en paz? Las oportunidades para encontrar alivio son pocas… ¡no dejes que se te escapen, actúa ahora!</p>
-            
-        </div>
+<!-- Autor -->
+<section class="author section">
+    <div class="container">
+        <h2>Sobre el Autor</h2>
+        <img src="image/PERFIL2.png" alt="Foto de Pablo Joel Paniagua">
+        <p>Pablo Joel Paniagua es un experto en neuropsicología con más de 15 años ayudando a personas con TDAH. Autor de varios libros, combina ciencia y práctica para ofrecer soluciones reales. Certificado por asociaciones internacionales de salud mental, como la American Psychological Association y la Federación Mundial de Salud Mental.</p>
+    </div>
+</section>
 
-        <div class="video-container">
-            <iframe src="video/ansiedade.mp4" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <div class="points">
-            <h2>Claves para una Vida Más Tranquila</h2>
-            <ul>
-                <li>Por qué es tan importante reducir el estrés y la ansiedad</li>
-                <li>¿Qué se puede hacer para reducir el estrés y la ansiedad?</li>
-                <li>Reforzar la autoestima</li>
-                <li>Seguir hábitos de vida saludables</li>
-            </ul>
-        </div>
-
-        <div class="checkout">
-            <h2>¡Empieza Hoy Mismo!</h2>
-            <p>Únete a miles de personas que han transformado sus vidas. Completa tu compra ahora.</p>
-            <iframe class="checkout-iframe" src="https://pay.hotmart.com/D65004307Y?sck=HOTMART_PRODUCT_PAGE&off=2oujr94s&hotfeature=32&_gl=1*orusxh*_gcl_aw*R0NMLjE3NTU5NzU0MjIuQ2owS0NRand6YVhGQmhEbEFSSXNBRlB2LXUtcTdSRGgzakRCTWFJUjhPZ2l4MnJUazNZZ0dGTGNkMzRIaTJVbUpKSW9KdHh6RXhoOElfWWFBcFRyRUFMd193Y0I.*_gcl_au*MTkxMDExMDM3MC4xNzU1ODU2NDA1LjIxMjI5MzA4MTkuMTc1NjY2OTIxOS4xNzU2NjcxOTE3*_ga*MjExNjQ4MjQwNy4xNzU1ODU2NDA1*_ga_GQH2V1F11Q*czE3NTY2NjkxOTQkbzkkZzEkdDE3NTY2NzMxMDkkajYwJGwwJGgw&bid=1756673113396"></iframe>
-        </div>
-
-        <div class="testimonials">
-            <h2>Lo que dicen nuestros clientes</h2>
-            <div class="testimonial">
-                <div class="stars">★★★★★</div>
-                <p>"Este producto cambió mi vida. Antes vivía con ansiedad constante, pero ahora me siento mucho más tranquilo y en control." <br><strong>- María G.</strong></p>
+<!-- Beneficios -->
+<section class="benefits section" id="beneficios">
+    <div class="container">
+        <h2>Claves para una Vida Mejor</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <i class="fas fa-brain"></i>
+                <h3>Mejora tu Concentración Diaria</h3>
+                <p>Aprende técnicas de mindfulness y rutinas que reducen distracciones, respaldadas por estudios en neurociencia.</p>
             </div>
-            <div class="testimonial">
-                <div class="stars">★★★★★</div>
-                <p>"Nunca pensé que podría manejar mi estrés tan bien. ¡Recomiendo este producto a todos!" <br><strong>- Juan P.</strong></p>
+            <div class="benefit-card">
+                <i class="fas fa-heart"></i>
+                <h3>Gestión de Emociones</h3>
+                <p>Ejercicios prácticos para controlar la impulsividad y manejar el estrés emocional asociado al TDAH.</p>
             </div>
-        </div>
-
-        <div class="guarantee">
-            <img src="image/garantia.png" alt="Sello de Garantía">
-            <h2>Garantía de Satisfacción</h2>
-            <p>Estamos tan seguros de que nuestro producto te ayudará que ofrecemos una garantía de devolución de dinero si no estás satisfecho.</p>
+            <div class="benefit-card">
+                <i class="fas fa-briefcase"></i>
+                <h3>Estrategias para el Trabajo y Estudios</h3>
+                <p>Herramientas para aumentar la productividad y mantener el foco en entornos exigentes.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-moon"></i>
+                <h3>Hábitos Saludables para el Sueño</h3>
+                <p>Consejos basados en evidencia para mejorar el descanso y reducir la fatiga.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-smile"></i>
+                <h3>Reducción de Ansiedad Asociada al TDAH</h3>
+                <p>Estrategias para mitigar la ansiedad comórbida, con referencias a estudios científicos.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-users"></i>
+                <h3>Herramientas para Relaciones Interpersonales</h3>
+                <p>Mejora la comunicación y reduce conflictos en tus relaciones personales y profesionales.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Aumento de la Productividad</h3>
+                <p>Rutinas diarias probadas para maximizar tu eficiencia.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-star"></i>
+                <h3>Reforzar la Autoestima</h3>
+                <p>Técnicas para construir confianza y superar desafíos emocionales.</p>
+            </div>
         </div>
     </div>
+</section>
 
-    <footer>
-        <p>&copy; 2025 Controla tu Ansiedad. Todos los derechos reservados.</p>
-    </footer>
+<!-- Testimonios -->
+<section class="testimonials section" id="testimonios">
+    <div class="container">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <img src="image/PERFIL4.png" alt="Foto de Ana M.">
+                <div class="stars">★★★★★</div>
+                <p>"Antes luchaba con el enfoque, ahora soy más productiva gracias a esta guía. Cambió mi vida."</p>
+                <p>- Ana M.</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="image/PERFIL1.png" alt="Foto de Juan P.">
+                <div class="stars">★★★★★</div>
+                <p>"Nunca pensé que podría manejar mi TDAH tan bien. ¡Recomiendo este producto a todos!"</p>
+                <p>- Juan P.</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="image/PERFIL3.png" alt="Foto de María G.">
+                <div class="stars">★★★★★</div>
+                <p>"Este guía me ayudó a reducir mi impulsividad y mejorar mis relaciones. ¡Excelente!"</p>
+                <p>- María G.</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="image/PERFIL5.png" alt="Foto de Carlos R.">
+                <div class="stars">★★★★★</div>
+                <p>"Las estrategias para el sueño y la productividad son transformadoras. Gracias, Pablo."</p>
+                <p>- Carlos R.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <script>
-        function startTimer() {
-            const endDate = new Date();
-            endDate.setHours(endDate.getHours() + 22); // Temporizador de 24 horas
-            const timerElement = document.getElementById('timer');
+<!-- Antes y Después -->
+<section class="before-after section">
+    <div class="container">
+        <h2>Antes y Después</h2>
+        <div class="ba-grid">
+            <div class="ba-column ba-before">
+                <h3>Vida con TDAH Sin Control</h3>
+                <ul>
+                    <li>Caos y distracciones constantes</li>
+                    <li>Baja productividad</li>
+                    <li>Estrés y ansiedad alta</li>
+                </ul>
+            </div>
+            <div class="ba-column ba-after">
+                <h3>Con 'Vivir con TDAH'</h3>
+                <ul>
+                    <li>Organización y foco</li>
+                    <li>Alta productividad</li>
+                    <li>Bienestar y control</li>
+                </ul>
+            </div>
+        </div>
+        <p>Transforma tu rutina en solo semanas.</p>
+    </div>
+</section>
 
-            function updateTimer() {
-                const now = new Date();
-                const timeLeft = endDate - now;
+<!-- Garantía -->
+<section class="guarantee section" id="garantia">
+    <div class="container">
+        <img src="image/garantia.png" alt="Sello de Garantía">
+        <h2>Garantía de Satisfacción 100%</h2>
+        <p>Si no estás satisfecho en 30 días, devolución completa.</p>
+    </div>
+</section>
 
-                if (timeLeft <= 0) {
-                    timerElement.textContent = '¡Oferta Finalizada!';
-                    return;
-                }
+<!-- FAQ -->
+<section class="faq section">
+    <div class="container">
+        <h2>Preguntas Frecuentes</h2>
+        <details>
+            <summary>¿Qué es TDAH?</summary>
+            <p>El Trastorno por Déficit de Atención e Hiperactividad es un trastorno neuroconductual que afecta la concentración, impulsividad y actividad.</p>
+        </details>
+        <details>
+            <summary>¿El libro es para adultos o niños?</summary>
+            <p>Principalmente para adultos, pero incluye estrategias adaptables para todas las edades.</p>
+        </details>
+        <details>
+            <summary>¿Incluye ejercicios prácticos?</summary>
+            <p>Sí, con rutinas diarias y técnicas basadas en evidencia científica.</p>
+        </details>
+        <details>
+            <summary>¿Cómo accedo al producto después de comprar?</summary>
+            <p>Recibirás un enlace de descarga inmediata via email de Hotmart.</p>
+        </details>
+        <details>
+            <summary>¿Hay soporte post-venta?</summary>
+            <p>Sí, acceso a actualizaciones y comunidad en línea.</p>
+        </details>
+    </div>
+</section>
 
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+<!-- Checkout -->
+<section class="checkout section" id="comprar">
+    <div class="container">
+        <h2>¡Comienza Tu Transformación Hoy!</h2>
+        <p>$11.00 (+ impuestos)</p>
+        <p>Pago seguro via Hotmart. Únete a miles que han mejorado su vida con esta guía.</p>
+        <iframe class="checkout-iframe" src="https://pay.hotmart.com/E99198227K?hotfeature=51&_hi=eyJjaWQiOiIxNzU4MTYwMjYzMzcxNzY4NTY0IiwiYmlkIjoiMTc1ODE2MDI2MzM3MTc2ODU2NCIsInNpZCI6Ijc3OGU0MzExLThlZTQtNDNhNC04ZjYwLWYxZmMwZWZkNDBmMyJ9&bid=1758160263371768564&offDiscount=OCSC4QW2&offid=txkm1c7b" width="640" height="800" frameborder="0" scrolling="auto"></iframe>
+    </div>
+</section>
 
-                timerElement.textContent = `FIN DEL DESCUENTO: ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            }
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Vivir con TDAH. Todos los derechos reservados.</p>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+</footer>
 
-            setInterval(updateTimer, 1000);
-            updateTimer();
+<script>
+function startTimer() {
+    const endDate = new Date();
+    endDate.setHours(22, 0, 0, 0);
+    function updateTimer() {
+        const now = new Date();
+        const diff = endDate - now;
+        if (diff <= 0) {
+            document.getElementById('timer').textContent = "¡La oferta terminó!";
+            return;
         }
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        document.getElementById('timer').textContent =
+            `FIN DEL DESCUENTO: ${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+    }
+    updateTimer();
+    setInterval(updateTimer, 1000);
+}
+startTimer();
 
-        window.onload = startTimer;
-    </script>
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+sections.forEach(section => observer.observe(section));
+</script>
+
 </body>
 </html>
