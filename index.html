@@ -41,6 +41,7 @@ a {
     display: inline-block;
     transition: background-color 0.3s;
     cursor: pointer;
+    margin-top: 20px;
 }
 .btn-cta:hover {
     background-color: #E65A00;
@@ -50,7 +51,7 @@ a {
     background: linear-gradient(to bottom, #FF6B00 0%, #FFFFFF 100%);
     color: #003366;
     text-align: center;
-    padding: 100px 0;
+    padding: 80px 20px 50px 20px;
     position: relative;
     background-attachment: fixed;
     background-size: cover;
@@ -85,7 +86,11 @@ a {
 }
 .product-image {
     max-width: 400px;
+    width: 100%;
+    height: auto;
     animation: zoom 2s ease-in-out infinite alternate;
+    margin: 20px auto 10px auto;
+    display: block;
 }
 @keyframes zoom {
     0% { transform: scale(1); }
@@ -189,144 +194,33 @@ a {
     color: #facc15;
     margin-bottom: 10px;
 }
-/* Antes y Después */
-.before-after {
+/* Checkout Section */
+.checkout-section {
     background-color: #F5F5F5;
     padding: 60px 0;
     text-align: center;
 }
-.ba-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    max-width: 800px;
-    margin: 20px auto;
-}
-.ba-column {
-    padding: 20px;
-    border-radius: 10px;
-}
-.ba-before {
-    background-color: #FFDAB9;
-}
-.ba-after {
-    background-color: #90EE90;
-}
-.ba-arrow {
-    font-size: 2em;
-    color: #FF6B00;
-    align-self: center;
-}
-/* Garantía */
-.guarantee {
-    background-color: #FFE4D6;
-    padding: 60px 0;
-    text-align: center;
-}
-.guarantee img {
-    max-width: 150px;
+.checkout-section h2 {
     margin-bottom: 20px;
 }
-/* FAQ */
-.faq {
-    background-color: #FFFFFF;
-    padding: 60px 0;
-}
-details {
-    margin: 10px 0;
-    border: 1px solid #F5F5F5;
-    border-radius: 5px;
-    padding: 10px;
-}
-summary {
-    font-weight: bold;
-    cursor: pointer;
-}
-/* Checkout */
-.checkout {
-    background-color: #F5F5F5;
-    padding: 60px 0;
-    text-align: center;
-}
-.checkout-iframe {
-    width: 100%;
-    height: 800px;
-    border: none;
-    margin-top: 20px;
-}
-/* Popup */
-#checkout-popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 700px;
-    height: 80%;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    z-index: 1000;
-    overflow: hidden;
-}
-#checkout-popup iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-#checkout-popup .close-popup {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 25px;
-    font-weight: bold;
-    color: #FF6B00;
-    cursor: pointer;
-}
-/* Footer */
-footer {
-    background-color: #003366;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 40px 0;
-}
-.social-icons i {
-    font-size: 1.5em;
-    margin: 0 10px;
-    color: #FFFFFF;
+.checkout-section p {
+    margin-bottom: 20px;
+    font-size: 1.2em;
 }
 /* Media Queries */
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2em;
     }
-    .ba-grid {
-        grid-template-columns: 1fr;
+    .hero-subtitle {
+        font-size: 1.2em;
     }
-    .ba-arrow {
-        transform: rotate(90deg);
-        margin: 20px 0;
+    .product-image {
+        max-width: 180px;
     }
 }
 </style>
 </head>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)}; 
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
-s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1098364668702521');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1098364668702521&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 <body>
 
 <!-- Header -->
@@ -336,16 +230,15 @@ src="https://www.facebook.com/tr?id=1098364668702521&ev=PageView&noscript=1"
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#beneficios">Beneficios</a></li>
             <li><a href="#testimonios">Testimonios</a></li>
-            <li><a href="#garantia">Garantía</a></li>
-            <li><a href="#comprar">Comprar</a></li>
+            <li><a href="#checkout-section">Comprar</a></li>
         </ul>
     </nav>
     <h1 class="hero-title">Vivir con TDAH: Guía Práctica para una Vida Más Enfocada</h1>
     <p class="hero-subtitle">Por Pablo Joel Paniagua – Transforma tu día a día con estrategias probadas</p>
     <img src="image/PORTADA3D.png" alt="Portada del libro Vivir con TDAH" class="product-image">
+    <a href="#checkout-section" class="btn-cta">Comprar Ahora</a>
     <p id="timer" class="timer"></p>
     <p>Oferta Especial: $11.00 (más impuestos) – ¡Aprovecha antes de que termine!</p>
-    <a href="#comprar" class="btn-cta" onclick="openCheckout()">Comprar Ahora</a>
 </header>
 
 <!-- Intro -->
@@ -441,7 +334,7 @@ src="https://www.facebook.com/tr?id=1098364668702521&ev=PageView&noscript=1"
             <div class="testimonial-card">
                 <img src="image/PERFIL3.png" alt="Foto de María G.">
                 <div class="stars">★★★★★</div>
-                <p>"Este guía me ayudó a reducir mi impulsividad y mejorar mis relaciones. ¡Excelente!"</p>
+                <p>"Esta guía me ayudó a reducir mi impulsividad y mejorar mis relaciones. ¡Excelente!"</p>
                 <p>- María G.</p>
             </div>
             <div class="testimonial-card">
@@ -454,123 +347,46 @@ src="https://www.facebook.com/tr?id=1098364668702521&ev=PageView&noscript=1"
     </div>
 </section>
 
-<!-- Antes y Después -->
-<section class="before-after section">
-    <div class="container">
-        <h2>Antes y Después</h2>
-        <div class="ba-grid">
-            <div class="ba-column ba-before">
-                <h3>Vida con TDAH Sin Control</h3>
-                <ul>
-                    <li>Caos y distracciones constantes</li>
-                    <li>Baja productividad</li>
-                    <li>Estrés y ansiedad alta</li>
-                </ul>
-            </div>
-            <div class="ba-column ba-after">
-                <h3>Con 'Vivir con TDAH'</h3>
-                <ul>
-                    <li>Organización y foco</li>
-                    <li>Alta productividad</li>
-                    <li>Bienestar y control</li>
-                </ul>
-            </div>
-        </div>
-        <p>Transforma tu rutina en solo semanas.</p>
-    </div>
+<!-- Checkout -->
+<section class="checkout-section section" id="checkout-section">
+  <div class="container">
+    <h2>Comprar Ahora</h2>
+    <p>Accede inmediatamente a la guía completa y transforma tu vida con estrategias prácticas para el TDAH.</p>
+    <iframe 
+      src="https://pay.hotmart.com/E99198227K?hotfeature=51&_hi=eyJjaWQiOiIxNzU4MTYwMjYzMzQwNTA2NTk3NTk2NzYyMDE4MzAwIiwiYmlkIjoiMTc1ODE2MDI2MzM0MDUwNjU5NzU5Njc2MjAxODMwMCIsInNpZCI6IjZjYzBmMjgwYWYyYTQ2MDdiNzdiMzZhMDFhMzMyNTQ4In0=.1758283857501&bid=1758283859170" 
+      frameborder="0" 
+      scrolling="no"
+      style="width:100%;height:2200px;border:none;">
+    </iframe>
+  </div>
 </section>
-
-<!-- Garantía -->
-<section class="guarantee section" id="garantia">
-    <div class="container">
-        <img src="image/garantia.png" alt="Sello de Garantía">
-        <h2>Garantía de Satisfacción 100%</h2>
-        <p>Si no estás satisfecho en 30 días, devolución completa.</p>
-    </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq section">
-    <div class="container">
-        <h2>Preguntas Frecuentes</h2>
-        <details>
-            <summary>¿Cuánto tiempo tarda en llegar el libro?</summary>
-            <p>Es un producto digital, por lo que el acceso es inmediato tras la compra.</p>
-        </details>
-        <details>
-            <summary>¿Puedo compartir el libro?</summary>
-            <p>Este libro es de uso personal. Compartirlo viola los términos de uso.</p>
-        </details>
-        <details>
-            <summary>¿Qué métodos de pago se aceptan?</summary>
-            <p>Tarjetas de crédito, débito y PayPal vía Hotmart.</p>
-        </details>
-    </div>
-</section>
-
-<!-- Comprar Ahora -->
-<section class="checkout section" id="comprar">
-    <div class="container">
-        <a class="btn-cta" onclick="openCheckout()">Comprar Ahora</a>
-    </div>
-</section>
-
-<!-- Popup Checkout -->
-<div id="checkout-popup">
-    <span class="close-popup" onclick="closeCheckout()">&times;</span>
-    <iframe src="https://pay.hotmart.com/E99198227K?hotfeature=51&_hi=eyJjaWQiOiIxNzU4MTYwMjYzMzQwNTA2NTk3NTk2NzYyMDE4MzAwIiwiYmlkIjoiMTc1ODE2MDI2MzM0MDUwNjU5NzU5Njc2MjAxODMwMCIsInNpZCI6IjZjYzBmMjgwYWYyYTQ2MDdiNzdiMzZhMDFhMzMyNTQ4In0=.1758283857501&bid=1758283859170" frameborder="0"></iframe>
-</div>
-
-<!-- Footer -->
-<footer>
-    <p>&copy; 2025 Vivir con TDAH - Todos los derechos reservados.</p>
-    <div class="social-icons">
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-whatsapp"></i>
-    </div>
-</footer>
 
 <script>
-// Countdown Timer
-function startTimer(duration, display) {
-    let timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-        display.textContent = minutes + ":" + seconds;
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000);
+/* Countdown Timer */
+function countdown(endDate) {
+    let timer = document.getElementById('timer');
+    function updateTimer() {
+        let now = new Date();
+        let diff = endDate - now;
+        if(diff <= 0) { timer.innerHTML = "¡Oferta terminada!"; return; }
+        let days = Math.floor(diff/1000/60/60/24);
+        let hours = Math.floor((diff/1000/60/60) %24);
+        let minutes = Math.floor((diff/1000/60)%60);
+        let seconds = Math.floor((diff/1000)%60);
+        timer.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+    }
+    setInterval(updateTimer,1000);
 }
-window.onload = function () {
-    let fiveMinutes = 60 * 58,
-        display = document.querySelector('#timer');
-    startTimer(fiveMinutes, display);
-};
+countdown(new Date("2025-10-01T23:59:59"));
 
-// Fade-in sections
-const sections = document.querySelectorAll('.section');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('visible');
-        }
+/* Fade-in on scroll */
+window.addEventListener('scroll', function() {
+    document.querySelectorAll('.section').forEach(function(section) {
+        let top = section.getBoundingClientRect().top;
+        let height = window.innerHeight;
+        if(top < height - 100) { section.classList.add('visible'); }
     });
-}, { threshold: 0.1 });
-sections.forEach(section => observer.observe(section));
-
-// Popup Checkout
-function openCheckout() {
-    document.getElementById('checkout-popup').style.display = 'block';
-}
-function closeCheckout() {
-    document.getElementById('checkout-popup').style.display = 'none';
-}
+});
 </script>
-
 </body>
 </html>
