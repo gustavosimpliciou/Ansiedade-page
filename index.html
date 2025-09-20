@@ -22,7 +22,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px; /* padding lateral completo */
 }
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
@@ -53,8 +53,6 @@ a {
     text-align: center;
     padding: 80px 20px 50px 20px;
     position: relative;
-    background-attachment: fixed;
-    background-size: cover;
 }
 .nav {
     position: absolute;
@@ -78,23 +76,18 @@ a {
 }
 .hero-title {
     font-size: 3em;
-    margin: 0;
+    margin: 0 10px;
 }
 .hero-subtitle {
     font-size: 1.5em;
-    margin: 10px 0;
+    margin: 10px 10px;
 }
 .product-image {
     max-width: 400px;
     width: 100%;
     height: auto;
-    animation: zoom 2s ease-in-out infinite alternate;
     margin: 20px auto 10px auto;
     display: block;
-}
-@keyframes zoom {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.05); }
 }
 .timer {
     font-size: 1.5em;
@@ -115,7 +108,7 @@ a {
 /* Introducción */
 .intro {
     background-color: #FFFFFF;
-    padding: 60px 0;
+    padding: 60px 20px;
     text-align: center;
 }
 .intro ul {
@@ -135,7 +128,7 @@ a {
 /* Autor */
 .author {
     background-color: #F5F5F5;
-    padding: 60px 0;
+    padding: 60px 20px;
     text-align: center;
 }
 .author img {
@@ -146,7 +139,7 @@ a {
 /* Beneficios */
 .benefits {
     background-color: #FFFFFF;
-    padding: 60px 0;
+    padding: 60px 20px;
 }
 .benefits-grid {
     display: grid;
@@ -171,7 +164,7 @@ a {
 /* Testimonios */
 .testimonials {
     background-color: #FFFFFF;
-    padding: 60px 0;
+    padding: 60px 20px;
 }
 .testimonials-grid {
     display: grid;
@@ -197,7 +190,7 @@ a {
 /* Checkout Section */
 .checkout-section {
     background-color: #F5F5F5;
-    padding: 60px 0;
+    padding: 60px 20px;
     text-align: center;
 }
 .checkout-section h2 {
@@ -207,16 +200,31 @@ a {
     margin-bottom: 20px;
     font-size: 1.2em;
 }
-/* Media Queries */
+
+/* Media Queries Responsivas */
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2em;
+        margin: 0 15px;
     }
     .hero-subtitle {
         font-size: 1.2em;
+        margin: 5px 15px;
     }
     .product-image {
         max-width: 180px;
+        margin-bottom: 10px;
+    }
+    .btn-cta {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .benefits-grid, .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    .container, .intro, .author, .benefits, .testimonials, .checkout-section {
+        padding-left: 20px;
+        padding-right: 20px; /* agora inclui lado direito */
     }
 }
 </style>
